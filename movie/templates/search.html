@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Movie Search
+{% endblock %}
+
+{% block content %}
+<center>
+<h3 class="mt-4">Movie Search Details</h3>
+    {% if c %}
+    <table class="table table-bordered">
+        <tr>
+         <th>ID</th>
+        <th>TITLE</th>
+        <th>DESC</th>
+        <th>YEAR</th>
+        </tr>
+       {% for i in c %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.desc}}</td>
+            <td>{{i.year}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h4>No Result Found</h4>
+    {% endif %}
+</center>
+
+{% endblock %}
